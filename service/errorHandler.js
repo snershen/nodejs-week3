@@ -1,7 +1,7 @@
 const errorHandler = (res, err) => {
   let message = '';
   if(err){
-    message = err.message;
+    message = err;
   }else{
     message = "欄位未填寫正確，或無此 ID"
   }

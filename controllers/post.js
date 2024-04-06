@@ -20,7 +20,7 @@ const posts = {
         });
         successHandler(res, newPost);
       } else {
-        errorHandler(res);
+        errorHandler(res, "content 欄位必填");
       }
     } catch (err) {
       errorHandler(res, "資料格式錯誤");
@@ -45,14 +45,14 @@ const posts = {
         const id = req.params.id;
         await PostModel.findByIdAndUpdate(id, editPost);
         successHandler(res, editPost);
-      }else{
+      } else {
         errorHandler(res, "content 為必填");
       }
     } catch (err) {
       errorHandler(res, "查無此 ID");
     }
   },
-  async deleteAllPosts(req, res){
+  async deleteAllPosts(req, res) {
     await PostModel.deleteMany({});
     successHandler(res, []);
   },
