@@ -8,9 +8,4 @@ router.patch("/:id", PostControllers.patchPost);
 router.delete("/:id", PostControllers.deletePost);
 router.delete("/", PostControllers.deleteAllPosts);
 
-router.options("/", (req, res) => {
-  res.writeHead(200, headers);
-  res.end();
-});
-
 module.exports = router;
